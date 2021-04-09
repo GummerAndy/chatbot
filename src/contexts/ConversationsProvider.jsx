@@ -39,14 +39,6 @@ export function ConversationsProvider({ id, children }) {
     });
   };
   const addMessageToConversation = ({ recipients, text, sender }) => {
-    console.log(
-      "addMessageToConversation recipients:",
-      recipients,
-      "text",
-      text,
-      "sender",
-      sender
-    );
     setConversations((prevConversations) => {
       let madeChange = false;
       const newMessage = { sender, text };
@@ -93,7 +85,6 @@ export function ConversationsProvider({ id, children }) {
     return { ...conversation, messages, recipients, selected };
   });
 
-  console.log("error", formattedConversations[selectedConversationIndex]);
   const value = {
     conversations: formattedConversations,
     selectedConversation: formattedConversations[selectedConversationIndex],
